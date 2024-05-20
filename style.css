@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: sans-serif;
+  background-color: #1c1c1c;
+  overflow: hidden;
+  user-select: none;
+}
+.main {
+  max-width: 500px;
+  width: 100%;
+  max-height: 500px;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  z-index: 100;
+  margin: 70px 425px;
+  box-shadow: 0px 0px 40px #c2c2c2;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 1.5%;
+    right: 1.5%;
+    width: 485px;
+    z-index: -100;
+    height: 485px;
+    border-radius: 50%;
+    background-color: #2e3d49;
+  }
+
+  &::before{
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: 160px;
+    width: 200px;
+    height: 700px;
+    z-index: -100;
+    background: linear-gradient(to top, cyan, rgb(182, 0, 182));
+    animation: ani 1s infinite linear;
+  }
+}
+
+  @keyframes ani {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+}
+
+#timer_display {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  overflow: hidden;
+  position: absolute;
+  top: 110px;
+  right: 105px;
+  background-color: rgba(255, 255, 255, 0.911);
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 25px;
+  box-shadow: inset 0px 0px 20px #000;
+  padding-right: 17px;
+
+  h1{
+    padding-top: 5px;
+    font-size: 40px;
+    width: 30px;
+  }
+}
+
+#btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px;
+  button {
+    width: 130px;
+    height: 50px;
+    margin-top: 300px;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    transition: 0.1s;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+  button:nth-child(2) {
+    background-color: rgb(201, 0, 0);
+    color: white;
+  }
+  button:nth-child(1) {
+    background-color: rgb(0, 202, 0);
+    color: white;
+    border-radius: 5px 0px 0px 5px;
+  }
+  button:nth-child(3) {
+    background-color: rgb(2, 2, 190);
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+  }
+}
+.light {
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  background-color: gray;
+  float: left;
+  margin: 20px;
+  position: relative;
+}
+
+.green {
+  position: absolute;
+  top: 225px;
+  left: 100px;
+  border: 2px solid #0f0f0f;
+}
+
+.red {
+  position: absolute;
+  top: 225px;
+  left: 220px;
+  border: 2px solid #0f0f0f;
+  
+}
+
+.blue {
+  position: absolute;
+  top: 225px;
+  left: 340px;
+  border: 2px solid #0f0f0f;
+}
